@@ -6,6 +6,7 @@ public class ControlaJogador : MonoBehaviour
 {
 
     public float Velocidade = 10;
+    Vector3 direcao;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,22 @@ public class ControlaJogador : MonoBehaviour
         float eixoX = Input.GetAxis("Horizontal");
         float eixoZ = Input.GetAxis("Vertical");
 
-        Vector3 direcao = new Vector3(eixoX, 0, eixoZ);
-        transform.Translate(direcao * Velocidade * Time.deltaTime);
+        direcao = new Vector3(eixoX, 0, eixoZ);
+
+       
+
+        if(direcao != Vector3.zero)
+        {
+            GetComponent<Animator>().SetBool("movendo", true);
+        }
+        else
+        {
+            GetComponent<Animator>().SetBool("movendo", false);
+        }
+    }
+
+    void FixedUpdate() 
+    {
+         GetComponent<Rigidbody>().MovePosition(GetComponent<Rigidbody>().position + (direcao * Velocidade * Time.deltaTime));
     }
 }
