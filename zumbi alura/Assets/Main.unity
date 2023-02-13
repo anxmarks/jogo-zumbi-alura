@@ -243,6 +243,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 855252865045189372, guid: 35861510587b7489780fe86970823679, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 3512115351417093411, guid: 35861510587b7489780fe86970823679, type: 3}
+      propertyPath: Jogador
+      value: 
+      objectReference: {fileID: 1607665118}
+    - target: {fileID: 8977527701252600212, guid: 35861510587b7489780fe86970823679, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a68217ed7a4291d4991f74886feb2850, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35861510587b7489780fe86970823679, type: 3}
 --- !u!1001 &512372646
@@ -535,6 +547,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 855252865045189372, guid: 35861510587b7489780fe86970823679, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 3512115351417093411, guid: 35861510587b7489780fe86970823679, type: 3}
+      propertyPath: Jogador
+      value: 
+      objectReference: {fileID: 1607665118}
+    - target: {fileID: 8977527701252600212, guid: 35861510587b7489780fe86970823679, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2b9bd8943fe8cc9419a96d337b4e3252, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35861510587b7489780fe86970823679, type: 3}
 --- !u!1 &1419081012
