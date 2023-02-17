@@ -24,14 +24,20 @@ public class ControlaInimigo : MonoBehaviour
        
         float distancia = Vector3.Distance(transform.position, Jogador.transform.position);
 
-        if(distancia > 2.5)
-        {
-             Vector3 direcao = Jogador.transform.position - transform.position;
-             GetComponent<Rigidbody>().MovePosition(GetComponent<Rigidbody>().position + direcao.normalized * Velocidade * Time.deltaTime);
+         Vector3 direcao = Jogador.transform.position - transform.position;
 
-            Quaternion novaRotacao = Quaternion.LookRotation(direcao);
+         Quaternion novaRotacao = Quaternion.LookRotation(direcao);
              GetComponent<Rigidbody>().MoveRotation(novaRotacao);
 
+        if(distancia > 2.5)
+        {
+            
+             GetComponent<Rigidbody>().MovePosition(GetComponent<Rigidbody>().position + direcao.normalized * Velocidade * Time.deltaTime);
+             GetComponent<Animator>().SetBool("atacando", false);
+        }
+        else
+        {
+            GetComponent<Animator>().SetBool("atacando", true);
         }
     }
 }
