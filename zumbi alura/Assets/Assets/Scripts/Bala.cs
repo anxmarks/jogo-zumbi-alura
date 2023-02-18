@@ -5,9 +5,15 @@ using UnityEngine;
 public class Bala : MonoBehaviour
 {
    public float Velocidade = 20;
+   private Rigidbody rigidbodyBala;
+   
+   void Start() 
+   {
+        rigidbodyBala =  GetComponent<Rigidbody>();
+   }
     void FixedUpdate()
     {
-        GetComponent<Rigidbody>().MovePosition(GetComponent<Rigidbody>().position + transform.forward * Velocidade * Time.deltaTime);
+        rigidbodyBala.MovePosition(rigidbodyBala.position + transform.forward * Velocidade * Time.deltaTime);
         
     }
 
@@ -15,10 +21,8 @@ public class Bala : MonoBehaviour
     {
         if(objetoDeColisao.tag =="Inimigo")
         {
-                    Destroy(objetoDeColisao.gameObject);
-
+            Destroy(objetoDeColisao.gameObject);
         }
-
         Destroy(gameObject);
 
     }
