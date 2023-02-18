@@ -33,11 +33,19 @@ public class ControlaInimigo : MonoBehaviour
         {
             
              GetComponent<Rigidbody>().MovePosition(GetComponent<Rigidbody>().position + direcao.normalized * Velocidade * Time.deltaTime);
-             GetComponent<Animator>().SetBool("atacando", false);
+             GetComponent<Animator>().SetBool("Atacando", false);
         }
         else
         {
-            GetComponent<Animator>().SetBool("atacando", true);
+            GetComponent<Animator>().SetBool("Atacando", true);
         }
+    }
+
+    void AtacaJogador()
+    {
+        Time.timeScale = 0;
+        Jogador.GetComponent<ControlaJogador>().TextoGameOver1.SetActive(true);
+        Jogador.GetComponent<ControlaJogador>().TextoGameOver2.SetActive(true);
+        Jogador.GetComponent<ControlaJogador>().Vivo = false;
     }
 }
