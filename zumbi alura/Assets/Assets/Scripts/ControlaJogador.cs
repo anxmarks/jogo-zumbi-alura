@@ -10,9 +10,9 @@ public class ControlaJogador : MonoBehaviour
     public LayerMask MascaraChao;
     public GameObject TextoGameOver1;
     public GameObject TextoGameOver2;
-    public bool Vivo = true;
     private Rigidbody rigidbodyJogador;
     private Animator animatorJogador;
+    public int Vida = 100;
 
     private void Start()
     {
@@ -38,7 +38,7 @@ public class ControlaJogador : MonoBehaviour
         {
             animatorJogador.SetBool("movendo", false);
         }
-         if(Vivo == false)
+         if(Vida <= 0)
          {
             if(Input.GetButtonDown("Fire1"))
             {
@@ -66,7 +66,17 @@ public class ControlaJogador : MonoBehaviour
 
             rigidbodyJogador.MoveRotation(novaRotacao);
          }
+    }
 
-        
+    public void TomarDano (int dano)
+    {
+        Vida -= dano;
+        if(Vida <= 0)
+        {
+            Time.timeScale = 0;
+            TextoGameOver1.SetActive(true);
+            TextoGameOver2.SetActive(true);
+        }
+
     }
 }
